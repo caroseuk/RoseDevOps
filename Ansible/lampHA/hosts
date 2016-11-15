@@ -1,0 +1,8 @@
+[webservers]
+178.62.43.162	ansible_connection=ssh	ansible_user=root
+
+[dbservers]
+178.62.43.162   ansible_connection=ssh  ansible_user=root
+
+[lbservers]
+178.62.43.162   ansible_connection=ssh  ansible_user=root
