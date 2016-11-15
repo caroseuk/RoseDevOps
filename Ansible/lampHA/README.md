@@ -1,19 +1,15 @@
 LAMP Stack + HAProxy: Example Playbooks
 -----------------------------------------------------------------------------
 
-- Requires Ansible 1.2
-- Expects CentOS/RHEL 6 hosts
+- Requires Ansible 1.2+
+- Expects CentOS/RHEL 7 hosts
 
-This example is an extension of the simple LAMP deployment. Here we'll install
+This example is an extension of a simple LAMP deployment. Here we'll install
 and configure a web server with an HAProxy load balancer in front, and deploy
 an application to the web servers. This set of playbooks also have the
 capability to dynamically add and remove web server nodes from the deployment.
 It also includes examples to do a rolling update of a stack without affecting
 the service.
-
-(To use this demonstration with Amazon Web Services, please use the "aws" sub-directory.)
-
-You can also optionally configure a Nagios monitoring node.
 
 ### Initial Site Setup
 
@@ -30,9 +26,6 @@ inventory file, grouped by their purpose:
 		[lbservers]
 		lbserver
 		
-		[monitoring]
-		nagios
-
 After which we execute the following command to deploy the site:
 
 		ansible-playbook -i hosts site.yml
@@ -40,10 +33,6 @@ After which we execute the following command to deploy the site:
 The deployment can be verified by accessing the IP address of your load
 balancer host in a web browser: http://<ip-of-lb>:8888. Reloading the page
 should have you hit different webservers.
-
-The Nagios web interface can be reached at http://<ip-of-nagios>/nagios/
-
-The default username and password are "nagiosadmin" / "nagiosadmin".
 
 ### Removing and Adding a Node
 
