@@ -1,4 +1,4 @@
-LAMP Stack + HAProxy: Example Playbooks
+LAMP Stack + HAProxy: POC Playbook for CentOS7 (Digital Ocean)
 -----------------------------------------------------------------------------
 
 - Requires Ansible 1.2+
